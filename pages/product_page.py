@@ -19,11 +19,11 @@ class ProductPage(BasePage):
         name_text = name.text
         name_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_BASKET)
         name_in_basket_text = name_in_basket.text
-        assert name_text in name_in_basket_text, "product_name_not_equal_name_in_basket"
+        assert name_text == name_in_basket_text, "product_name_not_equal_name_in_basket"
 
     def product_price_should_be_equal_price_in_basket(self):
         price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
         price_text = price.text
         price_in_basket = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_IN_BASKET)
         price_in_basket_text = price_in_basket.text
-        assert price_text in price_in_basket_text, "product_price_not_equal_price_in_basket"
+        assert price_text == price_in_basket_text, "product_price_not_equal_price_in_basket"
