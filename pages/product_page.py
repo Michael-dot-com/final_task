@@ -10,7 +10,6 @@ class ProductPage(BasePage):
         self.product_name_should_be_equal_name_in_basket()
         self.product_price_should_be_equal_price_in_basket()
 
-
     def add_product_to_basket(self):
         login_link = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         login_link.click()
@@ -36,3 +35,4 @@ class ProductPage(BasePage):
     def should_be_success_message_is_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should disappeared"
+
